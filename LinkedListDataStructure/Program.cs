@@ -11,7 +11,14 @@ namespace LinkedListDataStructure
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Linked List DataStructure!!!");
+            CustomLinkedList customLinkedList = new CustomLinkedList();
+           customLinkedList.Add(56);
+            customLinkedList.Add(30);
+            customLinkedList.Add(70);
+            customLinkedList.Display();
             Console.ReadLine();
+
+        
         }
     }
 }
