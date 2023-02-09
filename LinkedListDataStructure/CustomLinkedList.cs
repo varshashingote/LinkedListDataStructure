@@ -73,7 +73,7 @@ namespace LinkedListDataStructure
                                             (len + 1) / 2;
                 temp = head;
 
-                // 'ptr' points to the node after which 
+                // temp points to the node after which 
                 // the new node is to be inserted 
                 while (count-- > 1)
                     temp = temp.next;
@@ -84,13 +84,17 @@ namespace LinkedListDataStructure
                 temp.next = newNode;
             }
         }
-
-
-
-
-
+        public void RemoveFirst()
+        {
+            if(head==null)
+                Console.WriteLine("Its empty please add nodes");
+            else
+                Console.WriteLine("{0} is removed",head.data );
+                head = head.next;
+        }
         public void Display()
         {
+            Console.WriteLine("Displaying Nodes");
             Node temp = this.head;
             if (temp == null)
             {
