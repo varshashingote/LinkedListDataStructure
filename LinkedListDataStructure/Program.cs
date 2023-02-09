@@ -15,7 +15,7 @@ namespace LinkedListDataStructure
             CustomLinkedList customLinkedList = new CustomLinkedList();
 
             Console.WriteLine("Enter Your Choice 1.ADDFirst \n2.AddLast \n3.Append \n4.InsertElement" +
-                " \n5.RemoveFirstElement \n6.RemovelastElement");
+                " \n5.RemoveFirstElement \n6.RemovelastElement \n7.search");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -57,10 +57,18 @@ namespace LinkedListDataStructure
                     Console.ReadLine();
                     break;
                 case 6:
-                    customLinkedList.Add(56);
                     customLinkedList.Add(30);
                     customLinkedList.Add(70);
                     customLinkedList.RemoveLast();
+                    customLinkedList.Add(56);
+                    customLinkedList.Display();
+                    Console.ReadLine();
+                    break;
+                case 7:
+                    customLinkedList.Add(56);
+                    customLinkedList.Add(30);
+                    customLinkedList.Add(70);
+                    customLinkedList.Search(60);
                     customLinkedList.Display();
                     Console.ReadLine();
                     break;

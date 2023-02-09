@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
@@ -116,6 +117,36 @@ namespace LinkedListDataStructure
             temp.next = null;
             Console.WriteLine("{0} node is deleted ", lastDeleteNode);
         }
+        public void Search(int data)
+        {
+            bool isFound =false;
+            Node temp = head;
+            if(temp==null)
+                Console.WriteLine("Linked List is Empty");
+            else
+            {
+                while(temp!=null)
+                {
+                    if(temp.data==data)
+                    {
+                        Console.WriteLine("{0} node is presernt",temp.data);
+                        isFound = true;
+                        break;
+
+                    }
+                    temp = temp.next;
+
+                }
+                if(! isFound)
+                    Console.WriteLine("{0} node is not present",data);
+            }
+
+
+        }
+            
+
+
+
     
         public void Display()
         {
