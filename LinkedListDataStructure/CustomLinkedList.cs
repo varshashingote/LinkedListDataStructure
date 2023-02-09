@@ -8,9 +8,9 @@ using System.Xml.Linq;
 
 namespace LinkedListDataStructure
 {
-     class CustomLinkedList
+    class CustomLinkedList
     {
-        public Node head; 
+        public Node head;
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -29,21 +29,21 @@ namespace LinkedListDataStructure
             }
             Console.WriteLine("Inserted into Linked List :  {0}", node.data);
         }
-       
+
         public void AddFirst(int data)
         {
 
             Node Node = new Node(data);
             Node.next = this.head;
             this.head = Node;
-            Console.WriteLine("{0}is inserted into LikedList",Node.data);
+            Console.WriteLine("{0}is inserted into LikedList", Node.data);
         }
         public void Append(int data)
         {
             Node Node = new Node(data);
             Node.next = this.head;
             this.head = Node;
-            Console.WriteLine("{0} is inserted ",Node.data);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            Console.WriteLine("{0} is inserted ", Node.data);
 
         }
         public void insertAtMid(int data)
@@ -86,12 +86,37 @@ namespace LinkedListDataStructure
         }
         public void RemoveFirst()
         {
-            if(head==null)
+            if (head == null)
                 Console.WriteLine("Its empty please add nodes");
             else
-                Console.WriteLine("{0} is removed",head.data );
-                head = head.next;
+                Console.WriteLine("{0} is removed", head.data);
+            head = head.next;
         }
+        public void RemoveLast()
+        {
+            Node temp = head;
+            if (temp == null)
+                Console.WriteLine("its empty please add nodes");
+            if (temp.next == null)
+            {
+                int data = temp.data;
+                temp = null;
+                head = temp;
+                Console.WriteLine("{0} Node is deleted", data);
+            }
+            else
+            {
+                while (temp.next.next != null)
+                {
+                    temp = temp.next;
+                }
+
+            }
+            int lastDeleteNode = temp.next.data;
+            temp.next = null;
+            Console.WriteLine("{0} node is deleted ", lastDeleteNode);
+        }
+    
         public void Display()
         {
             Console.WriteLine("Displaying Nodes");
