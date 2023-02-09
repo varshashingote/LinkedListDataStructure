@@ -46,6 +46,49 @@ namespace LinkedListDataStructure
             Console.WriteLine("{0} is inserted ",Node.data);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
         }
+        public void insertAtMid(int data)
+        {
+            // if list is empty 
+            if (head == null)
+                head = new Node(data);
+            else
+            {
+                // get a new node 
+                Node newNode = new Node(data);
+
+                Node temp = head;
+                int len = 0;
+
+                // calculate length of the linked list 
+                //, i.e, the number of nodes 
+                while (temp != null)
+                {
+                    len++;
+                    temp = temp.next;
+                }
+
+                // 'count' the number of nodes after which 
+                // the new node is to be inserted 
+                int count = ((len % 2) == 0) ? (len / 2) :
+                                            (len + 1) / 2;
+                temp = head;
+
+                // 'ptr' points to the node after which 
+                // the new node is to be inserted 
+                while (count-- > 1)
+                    temp = temp.next;
+
+                // insert the 'newNode' and adjust 
+                // the required links 
+                newNode.next = temp.next;
+                temp.next = newNode;
+            }
+        }
+
+
+
+
+
         public void Display()
         {
             Node temp = this.head;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace LinkedListDataStructure
 {
@@ -12,20 +13,47 @@ namespace LinkedListDataStructure
         {
             Console.WriteLine("Welcome To Linked List DataStructure!!!");
             CustomLinkedList customLinkedList = new CustomLinkedList();
-            //customLinkedList.Add(56);
-            //customLinkedList.Add(30);
-            //customLinkedList.Add(70);
-            //customLinkedList.Display();
-            //customLinkedList.AddFirst(70);
-            //customLinkedList.AddFirst(30);
-            //customLinkedList.AddFirst(56);
-            //customLinkedList.Display();
-            //Console.ReadLine();
-            customLinkedList.Append(56);
-            customLinkedList.Append(30);
-            customLinkedList.Append(70);
-            customLinkedList.Display();
-            Console.ReadLine();
+
+            Console.WriteLine("Enter Your Choice 1.ADDFirst \n2.AddLast \n3.Append \n4.InsertElement");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    customLinkedList.Add(56);
+                    customLinkedList.Add(30);
+                    customLinkedList.Add(70);
+                    customLinkedList.Display();
+                    Console.ReadLine();
+
+                    break;
+                case 2:
+                    customLinkedList.AddFirst(70);
+                    customLinkedList.AddFirst(30);
+                    customLinkedList.AddFirst(56);
+                    customLinkedList.Display();
+                    Console.ReadLine();
+                    break;
+                case 3:
+                    customLinkedList.Append(56);
+                    customLinkedList.Append(30);
+                    customLinkedList.Append(70);
+                    customLinkedList.Display();
+                    Console.ReadLine();
+                    break;
+                case 4:
+                    customLinkedList.Add(56);
+                    customLinkedList.Add(70);
+                    customLinkedList.insertAtMid(30);
+                    customLinkedList.Display();
+                    Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Wrong Input");
+                    break;
+            }
+            
+            
+
 
 
 
